@@ -53,7 +53,7 @@ var like = {
 }
 
 var dislike = {
-	"stream" : preload("res://Soundtrack/SFXs/Deslike/1st Attempt/wav/deslike1.wav"),
+	"stream" : preload("res://Soundtrack/SFXs/Dislike/1st Attempt/wav/dislike1.wav"),
 	"volume" : 0.0,
 	"pitch" : [0.9,1.1],
 }
