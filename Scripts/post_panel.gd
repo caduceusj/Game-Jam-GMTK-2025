@@ -25,6 +25,7 @@ func sortOptions():
 
 
 func _on_button_button_down() -> void:
+	SoundsBank.play_sfx(SoundsBank.ui_accept)
 	Global.playerChoice = option1
 	$SubjectSelection.hide()
 	$"Like&Dislike".show()
@@ -32,6 +33,7 @@ func _on_button_button_down() -> void:
 
 
 func _on_button_2_button_down() -> void:
+	SoundsBank.play_sfx(SoundsBank.ui_accept)
 	Global.playerChoice = option2
 	$SubjectSelection.hide()
 	$"Like&Dislike".show()
@@ -39,6 +41,7 @@ func _on_button_2_button_down() -> void:
 
 
 func _on_button_3_button_down() -> void:
+	SoundsBank.play_sfx(SoundsBank.ui_accept)
 	Global.playerChoice = option3
 	$SubjectSelection.hide()
 	$"Like&Dislike".show()
@@ -46,6 +49,7 @@ func _on_button_3_button_down() -> void:
 
 
 func _on_like_button_down() -> void:
+	SoundsBank.play_sfx(SoundsBank.new_post_positive)
 	Global.playerImpression = "positive"
 	Global.playerTweet()
 	$SubjectSelection.show()
@@ -55,9 +59,9 @@ func _on_like_button_down() -> void:
 	pass # Replace with function body.
 
 
-func _on_dislike_button_down() -> void:
+func _on_dislike_button_down() -> void:	
+	SoundsBank.play_sfx(SoundsBank.new_post_negative)
 	Global.playerImpression = "negative"
-
 	Global.playerTweet()
 	$SubjectSelection.show()
 	$"Like&Dislike".hide()

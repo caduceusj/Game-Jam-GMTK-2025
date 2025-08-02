@@ -44,7 +44,7 @@ func changeRound():
 	
 	shuffle_children(get_node("/root/Main/ScrollContainer/TweetsContainer"))
 
-func playerTweet():
+func playerTweet():	
 	var likesAux : int = generateLikes(playerImpression, playerChoice)
 	var user_string = "You The Player"
 	var tweetInstance = tweet.instantiate()
@@ -56,7 +56,7 @@ func playerTweet():
 	print(arrayAux)
 	tweetInstance.tweet = arrayAux.pick_random()
 	await(get_tree().create_timer(0.1).timeout)
-	get_node("/root/Main/ScrollContainer/TweetsContainer/NewPostPanel").add_sibling(tweetInstance)
+	get_node("/root/Main/ScrollContainer/TweetsContainer/NewPostPanel").add_sibling(tweetInstance)	
 
 func generate_tweets(negativePost : Array, positivePost : Array, trend : String, number : int = 4):
 	var auxArray : Array[Array] = [negativePost.duplicate(), positivePost.duplicate()]

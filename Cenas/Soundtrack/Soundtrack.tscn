@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6kwxj515gsel"]
+
+[ext_resource type="Script" uid="uid://dxkj23uu6xfu6" path="res://Scripts/SoundsBank.gd" id="1_s20us"]
+
+[node name="Soundtrack" type="Node"]
+script = ExtResource("1_s20us")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
