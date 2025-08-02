@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://truvwoauf7px"
+path="res://.godot/imported/uiAccept4.ogg-0f0b071f9dcf25e56ead2556a2071090.oggvorbisstr"
+
+[deps]
+
+source_file="res://SFXs/UIAccept/1st Attempt/ogg/uiAccept4.ogg"
+dest_files=["res://.godot/imported/uiAccept4.ogg-0f0b071f9dcf25e56ead2556a2071090.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

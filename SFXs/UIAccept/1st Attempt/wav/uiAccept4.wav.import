@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dext56tyxydkc"
+path="res://.godot/imported/uiAccept4.wav-c034cc9b7f0ae33115673e59a9396518.sample"
+
+[deps]
+
+source_file="res://SFXs/UIAccept/1st Attempt/wav/uiAccept4.wav"
+dest_files=["res://.godot/imported/uiAccept4.wav-c034cc9b7f0ae33115673e59a9396518.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

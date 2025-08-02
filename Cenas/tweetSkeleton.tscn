@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj7du5yosxemo"]
+
+[ext_resource type="Texture2D" uid="uid://bo60fi4h0my37" path="res://Sprites/Placeholder/heart.png" id="1_nukqp"]
+[ext_resource type="Script" uid="uid://crohs4f15tm8k" path="res://Scripts/tweet.gd" id="1_ygwjh"]
+[ext_resource type="Texture2D" uid="uid://bneaeh1m3ndtn" path="res://Sprites/Placeholder/chat.png" id="2_m5uay"]
+[ext_resource type="Texture2D" uid="uid://bwevy5cvw6ko3" path="res://Sprites/Placeholder/heart (1).png" id="3_arkaf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nukqp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arkaf"]
+bg_color = Color(0.366595, 0.366595, 0.366594, 1)
+
+[node name="Tweet0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -326.0
+offset_bottom = -464.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ygwjh")
+
+[node name="TweetPanel" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_right = 1040.0
+offset_bottom = 302.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nukqp")
+
+[node name="Text" type="RichTextLabel" parent="TweetPanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 136.0
+offset_right = 881.0
+offset_bottom = 200.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 21
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi."
+fit_content = true
+scroll_active = false
+
+[node name="ColorRect" type="ColorRect" parent="TweetPanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 160.0
+offset_bottom = 128.0
+color = Color(1.15514e-06, 0.58828, 0.58919, 1)
+
+[node name="Name&Hashtag" type="RichTextLabel" parent="TweetPanel"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 40.0
+offset_right = 832.0
+offset_bottom = 104.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "nameblablabla 
+@blabla"
+scroll_active = false
+
+[node name="LikeButton" type="TextureButton" parent="TweetPanel"]
+layout_mode = 0
+offset_left = 937.0
+offset_top = 73.0
+offset_right = 1006.0
+offset_bottom = 137.0
+toggle_mode = true
+texture_normal = ExtResource("1_nukqp")
+texture_pressed = ExtResource("3_arkaf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LikesNumber" type="RichTextLabel" parent="TweetPanel"]
+layout_mode = 0
+offset_left = 937.0
+offset_top = 138.0
+offset_right = 1006.0
+offset_bottom = 178.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "[center]69420[center]"
+
+[node name="CommentIcon" type="TextureRect" parent="TweetPanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 224.0
+offset_right = 104.0
+offset_bottom = 264.0
+texture = ExtResource("2_m5uay")
+expand_mode = 1
+
+[node name="CommentPanel" type="Panel" parent="TweetPanel"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 224.0
+offset_right = 608.0
+offset_bottom = 264.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_arkaf")
+
+[node name="CommentLabel" type="RichTextLabel" parent="TweetPanel/CommentPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 464.0
+offset_bottom = 32.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "@salvador_da_vila : não gostei"
+
+[connection signal="toggled" from="TweetPanel/LikeButton" to="." method="_on_like_button_toggled"]

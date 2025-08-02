@@ -1,0 +1,161 @@
+[gd_scene load_steps=8 format=3 uid="uid://hp5o3xu75rlr"]
+
+[ext_resource type="Script" uid="uid://3e088xg8uhpv" path="res://Scripts/post_panel.gd" id="1_1sv4r"]
+[ext_resource type="Texture2D" uid="uid://ccm4c86mohyb0" path="res://Sprites/Placeholder/like.png" id="2_5j7j2"]
+[ext_resource type="Texture2D" uid="uid://dum01wocqa214" path="res://Sprites/Placeholder/dislike.png" id="2_frngw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qtm1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqkch"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sv4r"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5j7j2"]
+bg_color = Color(0.43134, 0.43134, 0.43134, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="NewPostPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1040.0
+offset_bottom = 304.0
+
+[node name="NewPostPanel" type="Panel" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(1040, 304)
+offset_right = 1040.0
+offset_bottom = 304.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0qtm1")
+script = ExtResource("1_1sv4r")
+
+[node name="Panel" type="Panel" parent="NewPostPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 792.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sqkch")
+
+[node name="Text" type="RichTextLabel" parent="NewPostPanel/Panel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 752.0
+offset_bottom = 56.0
+theme_override_colors/default_color = Color(0.374139, 0.374139, 0.374139, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "Write a message..."
+fit_content = true
+scroll_active = false
+
+[node name="Panel2" type="Panel" parent="NewPostPanel"]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 24.0
+offset_right = 1024.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1sv4r")
+
+[node name="Text2" type="RichTextLabel" parent="NewPostPanel/Panel2"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(0.374139, 0.374139, 0.374139, 1)
+theme_override_font_sizes/normal_font_size = 21
+text = "Post"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubjectSelection" type="HBoxContainer" parent="NewPostPanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 136.0
+offset_right = 1016.0
+offset_bottom = 208.0
+theme_override_constants/separation = 30
+
+[node name="Button" type="Button" parent="NewPostPanel/SubjectSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_5j7j2")
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="Button2" type="Button" parent="NewPostPanel/SubjectSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_5j7j2")
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="Button3" type="Button" parent="NewPostPanel/SubjectSelection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxFlat_5j7j2")
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="Like&Dislike" type="HBoxContainer" parent="NewPostPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -24.0
+offset_right = 200.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
+
+[node name="Dislike" type="TextureButton" parent="NewPostPanel/Like&Dislike"]
+modulate = Color(1, 1, 1, 0.431373)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_frngw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Like" type="TextureButton" parent="NewPostPanel/Like&Dislike"]
+modulate = Color(1, 1, 1, 0.431373)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_5j7j2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="button_down" from="NewPostPanel/SubjectSelection/Button" to="NewPostPanel" method="_on_button_button_down"]
+[connection signal="button_down" from="NewPostPanel/SubjectSelection/Button2" to="NewPostPanel" method="_on_button_2_button_down"]
+[connection signal="button_down" from="NewPostPanel/SubjectSelection/Button3" to="NewPostPanel" method="_on_button_3_button_down"]
+[connection signal="button_down" from="NewPostPanel/Like&Dislike/Dislike" to="NewPostPanel" method="_on_dislike_button_down"]
+[connection signal="button_down" from="NewPostPanel/Like&Dislike/Like" to="NewPostPanel" method="_on_like_button_down"]

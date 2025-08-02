@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcsjk874wp6al"]
+
+[ext_resource type="PackedScene" uid="uid://hp5o3xu75rlr" path="res://Cenas/new_post_panel.tscn" id="1_x3hk2"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1368.0
+offset_bottom = 768.0
+
+[node name="Layer1" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_right = 1368.0
+offset_bottom = 768.0
+color = Color(0.301961, 0.113725, 0, 1)
+
+[node name="Layer2" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 1208.0
+offset_bottom = 768.0
+color = Color(0.182605, 0.0573093, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 3.0
+offset_right = 1206.0
+offset_bottom = 765.0
+
+[node name="TweetsContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 304
+
+[node name="NewPostPanel" parent="ScrollContainer/TweetsContainer" instance=ExtResource("1_x3hk2")]
+layout_mode = 2
+
+[node name="NewPostPanel" parent="ScrollContainer/TweetsContainer/NewPostPanel" index="0"]
+layout_mode = 0
+
+[editable path="ScrollContainer/TweetsContainer/NewPostPanel"]

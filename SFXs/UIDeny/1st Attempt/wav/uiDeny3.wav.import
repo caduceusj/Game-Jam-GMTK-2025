@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drbjjbiqa4brc"
+path="res://.godot/imported/uiDeny3.wav-ec5a1ae1743642f399187df8867512ad.sample"
+
+[deps]
+
+source_file="res://SFXs/UIDeny/1st Attempt/wav/uiDeny3.wav"
+dest_files=["res://.godot/imported/uiDeny3.wav-ec5a1ae1743642f399187df8867512ad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

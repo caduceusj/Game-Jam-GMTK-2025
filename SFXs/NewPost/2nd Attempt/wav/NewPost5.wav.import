@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y2cnagr5wlsn"
+path="res://.godot/imported/NewPost5.wav-c21ebd9311dcf817d5e61026afb2cca8.sample"
+
+[deps]
+
+source_file="res://SFXs/NewPost/2nd Attempt/wav/NewPost5.wav"
+dest_files=["res://.godot/imported/NewPost5.wav-c21ebd9311dcf817d5e61026afb2cca8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
