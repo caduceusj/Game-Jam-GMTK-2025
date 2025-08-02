@@ -1,7 +1,7 @@
 extends Node
 
 
-
+#DICIONARIO DE TRENDS E COMENTARIOS
 var trends_dict = {
 	"Prince Smolhad": {
 		"positive": [
@@ -78,10 +78,102 @@ var trends_dict = {
 			"That's preposturous he must be under some Wizardry or must be a devil",
 			"Dude danced like a convulsing worm, and you guys giving him praise lmao"
 		]
+	},
+	"Bethrower": {
+		"positive": [
+			"Got myself a Bethrower plushie today 😊😊😊 His eyes are just soooo cuuuute!"
+		],
+		"negative": [
+			"There’s no such thing as a Bethrower. And even if there were, the first thing I’d do upon seeing him is punch him right in the middle eye",
+			"My son just showed me a Bethrower drawing in a book and WHAT THE HELL IS THIS UGLY THING 💀",
+			"I hope the Bethrower doesn’t exist… cause if he does, I’ll die just by looking at him 😭",
+			"My boi Bethrower lookin’ like a soggy sea urchin #uglyashell"
+		]
+	},
+	"Ponder the orb": {
+		"positive": [
+			"They who ponder the orb, shall walk with the Lord’s ward.",
+			"The bluer the orb, the wiser you get. Can confirm — it works wonders. ✨🔮",
+			"Pondering my orb makes me feel like a wise old wizard"
+		],
+		"negative": [
+			"Who in this world is foolish enough to waste their time staring at a damn crystal ball?",
+			"You get wiser by pondering and orb? And the earth is round LOL #fakenews"
+		]
 	}
 }
+#DICIONARIO DE TRENDS E COMENTARIOS
 
 
+#DICIONARIO DE RESPOSTAS GENERICAS
+var generic_replies_dict = {
+	"positive": [
+		"I agree 100%!",
+		"For real.",
+		"This is it.",
+		"Finally, someone with a brain!",
+		"Spitting facts.",
+		"I co-sign this.",
+		"Facts, you can't deny it.",
+		"Based.",
+		"YASSS 🙌",
+		"Exactly what I was thinking.",
+		"The GOAT! No question.",
+		"A perfect take.",
+		"Amen, Xhantos!",
+		"Words of a true sage.",
+		"🔥🔥🔥"
+	],
+	"negative": [
+		"Hard disagree.",
+		"Source: trust me bro.",
+		"That makes no sense.",
+		"What are you on about?",
+		"L take.",
+		"Delete this while you still can.",
+		"That's some goblin talk.",
+		"Even a troll would make more sense.",
+		"Yikes 💀",
+		"Yeah, sure buddy.",
+		"I'd rather lick a toad.",
+		"What a trash take 🤢",
+		"The confusion spell is strong with this one.",
+		"Take the L.",
+		"Someone ban this user, please."
+	],
+	# UPDATED BOTS SECTION
+	"bot": [
+		# Crypto/NFT Bots
+		"Don't miss your chance to invest in $DRAGONCOIN! 🐉🚀 To the moon! Link in bio!",
+		"Get rich quick with our new Mana-Crystal mining scheme! 💎💎 Limited spots available!",
+		"Tired of being a mere adventurer? Buy our Golden Gryphon NFT and become a Lord! 👑",
+		"The future of finance is decentralized! Join our Dragon Autnomous Organization (DAO)!",
+		# Fake OnlyFans Bots
+		"Hey loves ❤️ exclusive pics and vids on my private scroll! 😉 Link below 👇",
+		"Wanna see some real magic? ✨",
+		"Lonely in my castle 🏰",
+		"Naughty elf looking for some fun! 😈",
+		# Gambling Bots
+		"Bet on the next jousting tournament and win 1000 gold coins! ⚔️💰 Gryphon's Betting House, the best site!",
+		"Your guess is worth gold! Who will win the Battle of the Realms? Place your bet and compete for incredible prizes!",
+		"Make an initial deposit of 10 silver pieces and get 50 free spins on our Wheel of Fortune! 🤑",
+		"Lady Luck is on your side! Come to 'Wizard's Wager' and turn your mana into riches!"
+	],
+	# NEW SECTION
+	"ask_grorc": [
+		"Is this true, @Grorc?",
+		"I'll only believe it if @Grorc confirms.",
+		"Someone get @Grorc to fact-check this.",
+		"@Grorc, can you confirm this info?",
+		"This sounds like an elf's lie. Where's @Grorc to debunk this?",
+		"Oh, wise Grorc, enlighten us with the truth!",
+		"@Grorc, what's the verdict?",
+		"Is this real or just another illusion spell? We need Grorc!"
+	]
+}
+#DICIONARIO DE RESPOSTAS GENERICAS
+
+#DICIONARIO DE GERAÇÃO DE NOMES
 const WORD_LIST: Dictionary = {
 	"nouns": [
 		"Knight", "Dragon", "Elf", "Mage", "Warrior", "Sorcerer", "Thief", "Archer",
@@ -92,7 +184,7 @@ const WORD_LIST: Dictionary = {
 		"Salamander", "Gnome", "Pixie", "Brownie", "Boggart", "Banshee", "Ghoul", "Zombie",
 		"Skeleton", "Mummy", "Lich", "Wraith", "Specter", "Ghost", "Poltergeist", "Harpy",
 		"Siren", "Medusa", "Cyclops", "Minotaur", "Hydra", "Chimera", "Basilisk", "Wyvern",
-		"Roc", "Kraken", "Leviathan", "Behemoth", "Sphinx"
+		"Roc", "Kraken", "Leviathan", "Behemoth", "Sphinx", "Grorc"
 	],
 	"adjectives": [
 		"Mystic", "Ancient", "Dark", "Silver", "Golden", "Iron", "Steel", "Wooden", "Stone",
@@ -124,3 +216,4 @@ const WORD_LIST: Dictionary = {
 		"Outpost", "Watchtower", "Lighthouse", "Bridge", "Road", "Path", "Inn", "Tavern"
 	]
 }
+#DICIONARIO DE GERAÇÃO DE NOMES

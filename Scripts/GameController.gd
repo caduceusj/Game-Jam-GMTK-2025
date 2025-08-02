@@ -14,12 +14,19 @@ var impressionArray : Array[String] = ["positive", "negative"]
 var playerChoice : String
 var playerImpression : String
 
+var tweetCounter : int = 0
+var numberOfFollowers : int = 0
+var weekFollowers : int = 0
+
 @onready var tweet = preload("res://Cenas/tweetSkeleton.tscn")
-# Called when the node enters the scene tree for the first time.
+@onready var feedback = preload("res://Cenas/last5Tweets.tscn")
+
+
 func _ready() -> void:
 	changeRound()
-	pass # Replace with function body.
 
+
+#FUNÇÃO QUE CRIA UM NOVO SPREAD DE TWEETS E TRENDS
 func changeRound():
 	randomize()
 
@@ -32,7 +39,10 @@ func changeRound():
 	dicAux.remove_at(dicAux.find(secondaryTrend))
 	thirdTrend = dicAux[randi() % dicAux.size()]
 	
+	
+	print(impression)
 	impression = impressionArray[randi_range(0,1)]
+	print("TREND: " + chosenTrend +", IMPRESSION "+impression)
 	for x in get_node("/root/Main/ScrollContainer/TweetsContainer").get_child_count():
 		if(x==0):
 			pass
@@ -41,41 +51,80 @@ func changeRound():
 	generate_tweets(infoDictionary.trends_dict[chosenTrend]["negative"],infoDictionary.trends_dict[chosenTrend]["positive"], chosenTrend)
 	generate_tweets(infoDictionary.trends_dict[secondaryTrend]["negative"],infoDictionary.trends_dict[secondaryTrend]["positive"], secondaryTrend)
 	generate_tweets(infoDictionary.trends_dict[thirdTrend]["negative"],infoDictionary.trends_dict[thirdTrend]["positive"], thirdTrend, 2)
-	
 	shuffle_children(get_node("/root/Main/ScrollContainer/TweetsContainer"))
+#FUNÇÃO QUE CRIA UM NOVO SPREAD DE TWEETS E TRENDS
 
-func playerTweet():	
+
+
+#FUNÇÃO QUE CRIA O TWEET DO JOGADOR
+func playerTweet():
 	var likesAux : int = generateLikes(playerImpression, playerChoice)
 	var user_string = "You The Player"
 	var tweetInstance = tweet.instantiate()
-	tweetInstance.likes = likesAux
+	tweetInstance.likes = likesAux + numberOfFollowers
+	gainFollowers(tweetInstance.likes)
 	tweetInstance.user = user_string
 	print(playerChoice)
 	print(playerImpression)
 	var arrayAux = infoDictionary.trends_dict[playerChoice][playerImpression]
-	print(arrayAux)
+
+	tweetCounter+=1
 	tweetInstance.tweet = arrayAux.pick_random()
 	await(get_tree().create_timer(0.1).timeout)
-	get_node("/root/Main/ScrollContainer/TweetsContainer/NewPostPanel").add_sibling(tweetInstance)	
 
-func generate_tweets(negativePost : Array, positivePost : Array, trend : String, number : int = 4):
-	var auxArray : Array[Array] = [negativePost.duplicate(), positivePost.duplicate()]
+	get_node("/root/Main/ScrollContainer/TweetsContainer/NewPostPanel").add_sibling(tweetInstance)
+	if(tweetCounter == 5):
+		tweetCounter =0
+		var feedbackInstance = feedback.instantiate()
+		get_node("/root/Main/ScrollContainer/TweetsContainer/NewPostPanel").add_sibling(feedbackInstance)
+#FUNÇÃO QUE CRIA O TWEET DO JOGADOR
 
-	for x in 4:
-		if(auxArray[0].size() == 0):
-			var postAux = auxArray[1].pick_random()
-			auxArray[1].remove_at(auxArray[1].find(postAux))
-			add_tweet(postAux, trend, impressionArray[1])
-		elif(auxArray[1].size() == 0):
-			var postAux = auxArray[0].pick_random()
-			auxArray[0].remove_at(auxArray[0].find(postAux))
-			add_tweet(postAux, trend, impressionArray[0])
-		else:
-			var aux = randi_range(0,1)
-			var postAux = auxArray[aux].pick_random()
-			auxArray[aux].remove_at(auxArray[aux].find(postAux))
-			add_tweet(postAux, trend, impressionArray[aux])
+
+
+#CALCULO DE GANHO DE SEGUIDORES
+func gainFollowers(likes : int):
+	var multiplier 
+	if(playerImpression == impression):
+		multiplier = 1
+	else:
+		multiplier = -1
+	weekFollowers += likes/20 *multiplier
 	
+	numberOfFollowers +=  likes/20 *multiplier
+	
+	if(numberOfFollowers < 0):
+		numberOfFollowers = 0
+		weekFollowers = 0
+#CALCULO DE GANHO DE SEGUIDORES
+
+
+#GERA TWEETS
+func generate_tweets(negativePost: Array, positivePost: Array, trend: String, number: int = 4):
+	var aux_negative = negativePost.duplicate()
+	var aux_positive = positivePost.duplicate()
+	for x in number:
+		var opinion_type = randi_range(0, 1) 
+		if opinion_type == 0 and not aux_negative.is_empty():
+			var post_text = aux_negative.pick_random()
+			aux_negative.erase(post_text) 
+			add_tweet(post_text, trend, "negative") 
+		elif opinion_type == 1 and not aux_positive.is_empty():
+			var post_text = aux_positive.pick_random()
+			aux_positive.erase(post_text)
+			add_tweet(post_text, trend, "positive") 
+		elif not aux_positive.is_empty():
+			var post_text = aux_positive.pick_random()
+			aux_positive.erase(post_text)
+			add_tweet(post_text, trend, "positive")
+			
+		elif not aux_negative.is_empty():
+			var post_text = aux_negative.pick_random()
+			aux_negative.erase(post_text)
+			add_tweet(post_text, trend, "negative")
+#GERA TWEETS
+
+
+#DA SHUFFLE NA ORDEM DOS TWEETS
 func shuffle_children(node : Control) -> void:
 
 	if node.get_child_count() <= 1:
@@ -86,18 +135,26 @@ func shuffle_children(node : Control) -> void:
 	for i in range(children_to_shuffle.size()):
 		var child_node = children_to_shuffle[i]
 		node.move_child(child_node, i + 1)
-	
+#DA SHUFFLE NA ORDEM DOS TWEETS
+
+
+#FUNÇÃO QUE INSTANCIA OS TWEETS
 func add_tweet(tweet_text : String, trend : String , opinion : String, premadeUser : bool = false):
 	var likesAux : int = generateLikes(opinion, trend)
 	var user_string
 	if(premadeUser == false):
 		user_string = randomize_user()
 	var tweetInstance = tweet.instantiate()
+	
 	tweetInstance.likes = likesAux
 	tweetInstance.user = user_string
 	tweetInstance.tweet = tweet_text
+	
+	tweetCounter
 	get_node("/root/Main/ScrollContainer/TweetsContainer").add_child(tweetInstance)
+#FUNÇÃO QUE INSTANCIA OS TWEETS
 
+#FUNÇÃO QUE CALCULA OS LIKES
 func generateLikes(opinion : String, trend : String) -> int:
 	var likes = randi_range(0,10)
 	if(trend == chosenTrend):
@@ -105,10 +162,11 @@ func generateLikes(opinion : String, trend : String) -> int:
 		if(opinion == impression):
 			likes += randi_range(300, 600)
 	elif(trend == secondaryTrend):
-		likes += randi_range(50, 100)
+		likes += randi_range(50, 150)
 	return likes
+#FUNÇÃO QUE CALCULA OS LIKES
 
-
+#FUNÇÃO QUE ALEATORIZA O USUÁRIO
 func randomize_user():
 	var adjectives: Array = infoDictionary.WORD_LIST.adjectives
 	var nouns: Array = infoDictionary.WORD_LIST.nouns
@@ -133,7 +191,10 @@ func randomize_user():
 			base_name = "The "+ noun+ " of The "+ place
 			
 	return base_name
+#FUNÇÃO QUE ALEATORIZA O USUÁRIO
 
+
+#FUNÇÕES DE CONVERSÃO DE STRING
 
 func to_handle(base_name: String) -> String:
 	return base_name.replace(" ", "")
@@ -151,3 +212,4 @@ func _input(event: InputEvent) -> void:
 		SoundsBank.play_sfx(SoundsBank.ui_click)		
 	elif event.is_action_pressed("mouse_right_click"):
 		SoundsBank.play_sfx(SoundsBank.ui_deny)		
+#FUNÇÕES DE CONVERSÃO DE STRING

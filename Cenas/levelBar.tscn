@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dqcbcrprk7n7w"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.029
+anchor_bottom = 0.656
+offset_right = 0.385998
+offset_bottom = 0.191986
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 540.0
+offset_bottom = 39.0
+rotation = 1.5708

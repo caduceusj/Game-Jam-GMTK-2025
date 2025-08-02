@@ -4,11 +4,9 @@
 [ext_resource type="Script" uid="uid://crohs4f15tm8k" path="res://Scripts/tweet.gd" id="1_ygwjh"]
 [ext_resource type="Texture2D" uid="uid://bneaeh1m3ndtn" path="res://Sprites/Placeholder/chat.png" id="2_m5uay"]
 [ext_resource type="Texture2D" uid="uid://bwevy5cvw6ko3" path="res://Sprites/Placeholder/heart (1).png" id="3_arkaf"]
+[ext_resource type="PackedScene" uid="uid://dbx7v66p35sw3" path="res://Cenas/comment_panel.tscn" id="5_xu2ss"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nukqp"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arkaf"]
-bg_color = Color(0.366595, 0.366595, 0.366594, 1)
 
 [node name="Tweet0" type="Control"]
 layout_mode = 3
@@ -93,22 +91,16 @@ offset_bottom = 264.0
 texture = ExtResource("2_m5uay")
 expand_mode = 1
 
-[node name="CommentPanel" type="Panel" parent="TweetPanel"]
+[node name="CommentPanel" parent="TweetPanel" instance=ExtResource("5_xu2ss")]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 224.0
-offset_right = 608.0
-offset_bottom = 264.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_arkaf")
+offset_left = 132.0
+offset_top = 227.0
+offset_right = 612.0
+offset_bottom = 267.0
 
-[node name="CommentLabel" type="RichTextLabel" parent="TweetPanel/CommentPanel"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 8.0
-offset_right = 464.0
-offset_bottom = 32.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 15
-text = "@salvador_da_vila : não gostei"
-
+[connection signal="gui_input" from="TweetPanel" to="." method="_on_mouse_click"]
+[connection signal="gui_input" from="TweetPanel/Text" to="." method="_on_mouse_click"]
+[connection signal="gui_input" from="TweetPanel/ColorRect" to="." method="_on_mouse_click"]
+[connection signal="gui_input" from="TweetPanel/Name&Hashtag" to="." method="_on_mouse_click"]
 [connection signal="toggled" from="TweetPanel/LikeButton" to="." method="_on_like_button_toggled"]
+[connection signal="gui_input" from="TweetPanel/CommentPanel" to="." method="_on_mouse_click"]

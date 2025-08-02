@@ -68,3 +68,8 @@ func _on_dislike_button_down() -> void:
 	Global.changeRound()
 	sortOptions()
 	pass # Replace with function body.
+
+
+func _on_mouse_click(event: InputEvent) -> void:
+	if event.is_action_pressed("mouse_left_click"):
+		SoundsBank.play_sfx(SoundsBank.ui_deny)
