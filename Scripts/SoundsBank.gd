@@ -10,22 +10,22 @@ var music_pos : float = 0.0
 #SFXs
 #INTERACTION
 var ui_click = {
-	"stream" : preload("res://Soundtrack/SFXs/UIClick/1st Attempt/wav/uiClick1.wav"),
-	"volume" : 0.0,
-	"pitch" : [0.9,1.1],
+	"stream" : preload("res://Soundtrack/SFXs/UIClick/1st Attempt/wav/uiClick2.wav"),
+	"volume" : -25.0,
+	"pitch" : [0.8,1.2],
 }
 
 
 var ui_accept = {
 	"stream" : preload("res://Soundtrack/SFXs/UIAccept/1st Attempt/wav/uiAccept6.wav"),
-	"volume" : -10.0,
+	"volume" : -20.0,
 	"pitch" : [0.9,1.1],
 }
 
 var ui_deny = {
-	"stream" : preload("res://Soundtrack/SFXs/UIDeny/1st Attempt/wav/uiDeny1.wav"),
-	"volume" : 0.0,
-	"pitch" : [0.8,1.6],
+	"stream" : preload("res://Soundtrack/SFXs/UIDeny/1st Attempt/wav/uiDeny5.wav"),
+	"volume" : -25.0,
+	"pitch" : [0.9,1.1],
 }
 
 var keyboard_key = {
@@ -52,7 +52,7 @@ var like = {
 	"pitch" : [0.9,1.1],
 }
 
-var deslike = {
+var dislike = {
 	"stream" : preload("res://Soundtrack/SFXs/Deslike/1st Attempt/wav/deslike1.wav"),
 	"volume" : 0.0,
 	"pitch" : [0.9,1.1],

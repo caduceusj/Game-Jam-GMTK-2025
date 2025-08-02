@@ -145,3 +145,9 @@ func to_spaced_name(base_name: String) -> String:
 # Converte "Nome Base" para "@nome_base"
 func to_twitter_handle(base_name: String) -> String:
 	return "@" + base_name.to_lower().replace(" ", "_")
+
+func _input(event: InputEvent) -> void:	
+	if event.is_action_pressed("mouse_left_click"):
+		SoundsBank.play_sfx(SoundsBank.ui_click)		
+	elif event.is_action_pressed("mouse_right_click"):
+		SoundsBank.play_sfx(SoundsBank.ui_deny)		
