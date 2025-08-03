@@ -3,7 +3,7 @@ class_name CharacterProfileGenerator
 
 enum Races{HUMAN, ELF, DWARF, HALFLING}
 
-@export var shade_color: Color
+@export var shade_map: GradientTexture2D
 
 @export_group("non-elven colors")
 @export var skin_tone_map: GradientTexture2D
@@ -97,15 +97,18 @@ func get_rando_color_from_map(texture: Texture2D) -> Color:
 
 func set_colors(skin_map: Texture2D, hair_map: Texture2D) -> void:
 	var tones: Array[Color]
+	var shade_color: Color = get_rando_color_from_map(shade_map)
+	var light_shade := randf_range(0.1,0.4)
+	var dark_shade := randf_range(0.6,0.9)
 	
 	tones.append(get_rando_color_from_map(skin_map))
-	tones.append(tones[0].lerp(shade_color, 0.3))
-	tones.append(tones[0].lerp(shade_color, 0.6))
+	tones.append(tones[0].lerp(shade_color, light_shade))
+	tones.append(tones[0].lerp(shade_color, dark_shade))
 	tones.append(Color.from_hsv(randf(), randf_range(.5, .95), randf_range(.5, 0.9)))
-	tones.append(tones[3].lerp(shade_color, 0.3))
-	tones.append(tones[3].lerp(shade_color, 0.6))
+	tones.append(tones[3].lerp(shade_color, light_shade))
+	tones.append(tones[3].lerp(shade_color, dark_shade))
 	tones.append(get_rando_color_from_map(hair_map))
-	tones.append(tones[6].lerp(shade_color, 0.6))
+	tones.append(tones[6].lerp(shade_color, dark_shade))
 	
 	background.color = tones[3].inverted()
 	

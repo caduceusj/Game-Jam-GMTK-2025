@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3bvckau7g3yc"]
+[gd_scene load_steps=22 format=3 uid="uid://c3bvckau7g3yc"]
 
 [ext_resource type="Script" uid="uid://dd1mhel30o7qj" path="res://Scripts/profile_generator.gd" id="1_2iv7i"]
 [ext_resource type="Shader" uid="uid://su2qbeqfga8" path="res://shader/profile_generator.gdshader" id="1_vw3g4"]
@@ -9,6 +9,15 @@
 shader = ExtResource("1_vw3g4")
 shader_parameter/base_tones = PackedColorArray(1, 0.760784, 0.631373, 1, 0.741176, 0.415686, 0.384314, 1, 0.560784, 0.301961, 0.341176, 1, 0.901961, 0.270588, 0.223529, 1, 0.678431, 0.184314, 0.270588, 1, 0.470588, 0.113725, 0.309804, 1, 0.388235, 0.670588, 0.247059, 1, 0.231373, 0.490196, 0.309804, 1)
 shader_parameter/output_tones = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_e50rs"]
+offsets = PackedFloat32Array(0, 0.410959, 0.609589, 1)
+colors = PackedColorArray(0.161214, 0.143812, 0.020334, 1, 0.25, 0.025, 0.04, 1, 0.249278, 0.0283302, 0.0660465, 1, 0.24224, 0.0608, 0.32, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f33po"]
+gradient = SubResource("Gradient_e50rs")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(1, 1)
 
 [sub_resource type="Gradient" id="Gradient_vw3g4"]
 colors = PackedColorArray(0.276491, 0.116926, 0.0446977, 1, 0.9, 0.7965, 0.693, 1)
@@ -72,7 +81,7 @@ anchors_preset = 0
 offset_right = 128.0
 offset_bottom = 128.0
 script = ExtResource("1_2iv7i")
-shade_color = Color(0.213805, 1.83498e-07, 0.113526, 1)
+shade_map = SubResource("GradientTexture2D_f33po")
 skin_tone_map = SubResource("GradientTexture2D_fjww2")
 hair_tone_map = SubResource("GradientTexture2D_isw1e")
 elven_skin_tone_map = SubResource("GradientTexture2D_e50rs")
