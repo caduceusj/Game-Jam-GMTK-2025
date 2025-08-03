@@ -31,6 +31,7 @@ func _ready() -> void:
 
 func generate_character() -> void:
 	randomize()
+	_race = [Races.HUMAN, Races.ELF, Races.DWARF, Races.HALFLING].pick_random()
 	set_feature_texture(body, range(5).pick_random(), 0)
 	set_feature_texture(eyes, range(5).pick_random(), 1)
 	set_feature_texture(nose, range(5).pick_random(), 3)
@@ -66,13 +67,21 @@ func generate_character() -> void:
 	else:
 		set_colors(skin_tone_map, hair_tone_map)
 	
+	var height: float = 0
+	
 	if _race == Races.HALFLING:
-		back_hair.position.y = 64
-		body.position.y = 64
-		mouth.position.y = 64
-		eyes.position.y = 64
-		front_hair.position.y = 64
-		nose.position.y = 64
+		height = randf_range(56, 72)
+	elif _race == Races.DWARF:
+		height = randf_range(16, 40)
+	else:
+		height = randf_range(0, 16)
+		
+	back_hair.position.y = height
+	body.position.y = height
+	mouth.position.y = height
+	eyes.position.y = height
+	front_hair.position.y = height
+	nose.position.y = height
 
 
 func set_feature_texture(feature: TextureRect, x: int, y: int) -> void:
@@ -83,7 +92,7 @@ func set_feature_texture(feature: TextureRect, x: int, y: int) -> void:
 
 func get_rando_color_from_map(texture: Texture2D) -> Color:
 	var image := texture.get_image()
-	return image.get_pixel(randi_range(0, image.get_size().x), randi_range(0, image.get_size().y))
+	return image.get_pixel(randi_range(0, image.get_size().x - 1), randi_range(0, image.get_size().y - 1))
 
 
 func set_colors(skin_map: Texture2D, hair_map: Texture2D) -> void:
