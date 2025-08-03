@@ -15,18 +15,25 @@ enum Races{HUMAN, ELF, DWARF, HALFLING}
 
 var _race: Races = [Races.HUMAN, Races.ELF, Races.DWARF, Races.HALFLING].pick_random()
 
-@onready var background: ColorRect = %Background
-@onready var back_hair: TextureRect = %BackHair
-@onready var body: TextureRect = %Body
-@onready var mouth: TextureRect = %Mouth
-@onready var eyes: TextureRect = %Eyes
-@onready var front_hair: TextureRect = %FrontHair
-@onready var nose: TextureRect = %Nose
-
+@onready var background: ColorRect = $Mask/Background
+@onready var back_hair: TextureRect = $Mask/BackHair
+@onready var body: TextureRect = $Mask/Body
+@onready var mouth: TextureRect = $Mask/Mouth
+@onready var eyes: TextureRect = $Mask/Eyes
+@onready var front_hair: TextureRect = $Mask/FrontHair
+@onready var nose: TextureRect = $Mask/Nose
 
 
 func _ready() -> void:
 	generate_character()
+	back_hair.texture = back_hair.texture.duplicate()
+	body.texture = body.texture.duplicate()
+	mouth.texture = mouth.texture.duplicate()
+	eyes.texture = eyes.texture.duplicate()
+	front_hair.texture = front_hair.texture.duplicate()
+	nose.texture = nose.texture.duplicate()
+	material = material.duplicate()
+	
 
 
 func generate_character() -> void:

@@ -96,7 +96,6 @@ offset_bottom = 128.0
 texture = ExtResource("3_fjww2")
 
 [node name="Background" type="ColorRect" parent="Mask"]
-unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -105,7 +104,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BackHair" type="TextureRect" parent="Mask"]
-unique_name_in_owner = true
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -116,7 +114,6 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_2iv7i")
 
 [node name="Body" type="TextureRect" parent="Mask"]
-unique_name_in_owner = true
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -127,7 +124,6 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_vw3g4")
 
 [node name="Mouth" type="TextureRect" parent="Mask"]
-unique_name_in_owner = true
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -138,7 +134,6 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_fjww2")
 
 [node name="Eyes" type="TextureRect" parent="Mask"]
-unique_name_in_owner = true
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -149,7 +144,6 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_isw1e")
 
 [node name="FrontHair" type="TextureRect" parent="Mask"]
-unique_name_in_owner = true
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
@@ -160,7 +154,6 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_e50rs")
 
 [node name="Nose" type="TextureRect" parent="Mask"]
-unique_name_in_owner = true
 use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
