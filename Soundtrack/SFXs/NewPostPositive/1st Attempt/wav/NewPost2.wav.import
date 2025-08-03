@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drn2nuw2g16mf"
+path="res://.godot/imported/NewPost2.wav-fc471c2ddd639a142cc5c021bce13b86.sample"
+
+[deps]
+
+source_file="res://Soundtrack/SFXs/NewPostPositive/1st Attempt/wav/NewPost2.wav"
+dest_files=["res://.godot/imported/NewPost2.wav-fc471c2ddd639a142cc5c021bce13b86.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

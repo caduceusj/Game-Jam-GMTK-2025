@@ -98,4 +98,9 @@ offset_top = 227.0
 offset_right = 612.0
 offset_bottom = 267.0
 
+[connection signal="gui_input" from="TweetPanel" to="." method="_on_mouse_click"]
+[connection signal="gui_input" from="TweetPanel/Text" to="." method="_on_mouse_click"]
+[connection signal="gui_input" from="TweetPanel/ColorRect" to="." method="_on_mouse_click"]
+[connection signal="gui_input" from="TweetPanel/Name&Hashtag" to="." method="_on_mouse_click"]
 [connection signal="toggled" from="TweetPanel/LikeButton" to="." method="_on_like_button_toggled"]
+[connection signal="gui_input" from="TweetPanel/CommentPanel" to="." method="_on_mouse_click"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://fa4wbt0hgglq"
+path="res://.godot/imported/uiAccept3.ogg-d0467f13c5dab65294a6ae3d2ba9871b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Soundtrack/SFXs/UIAccept/1st Attempt/ogg/uiAccept3.ogg"
+dest_files=["res://.godot/imported/uiAccept3.ogg-d0467f13c5dab65294a6ae3d2ba9871b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

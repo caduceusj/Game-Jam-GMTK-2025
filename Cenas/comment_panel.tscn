@@ -27,4 +27,5 @@ scroll_active = false
 
 [node name="Timer" type="Timer" parent="."]
 
+[connection signal="gui_input" from="CommentLabel" to="." method="_on_mouse_click"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

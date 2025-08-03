@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4mggccurjy12"
+path="res://.godot/imported/NewPost1.ogg-75ca27bd0edd93dd3e5c42a52872cade.oggvorbisstr"
+
+[deps]
+
+source_file="res://Soundtrack/SFXs/NewPostPositive/2nd Attempt/ogg/NewPost1.ogg"
+dest_files=["res://.godot/imported/NewPost1.ogg-75ca27bd0edd93dd3e5c42a52872cade.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

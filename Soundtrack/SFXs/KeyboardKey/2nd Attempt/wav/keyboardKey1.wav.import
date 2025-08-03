@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dr0nh1ihqqd6p"
+path="res://.godot/imported/keyboardKey1.wav-4586dfbdb0261f7ba8e90031d4b08647.sample"
+
+[deps]
+
+source_file="res://Soundtrack/SFXs/KeyboardKey/2nd Attempt/wav/keyboardKey1.wav"
+dest_files=["res://.godot/imported/keyboardKey1.wav-4586dfbdb0261f7ba8e90031d4b08647.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://buj8hhljsr701"
+path="res://.godot/imported/like3.wav-eca3ecb65dca88c50c6a0d9d9e709f4d.sample"
+
+[deps]
+
+source_file="res://Soundtrack/SFXs/Like/1st Attempt/wav/like3.wav"
+dest_files=["res://.godot/imported/like3.wav-eca3ecb65dca88c50c6a0d9d9e709f4d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

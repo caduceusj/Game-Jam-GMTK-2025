@@ -62,6 +62,13 @@ func close():
 
 func _on_like_button_toggled(toggled_on: bool) -> void:
 	if($TweetPanel/LikesNumber.text == "[center]"+str(likes+1)+"[center]"):
+		SoundsBank.play_sfx(SoundsBank.dislike)
 		$TweetPanel/LikesNumber.text = "[center]"+str(likes)+"[center]"
 	else:
+		SoundsBank.play_sfx(SoundsBank.like)
 		$TweetPanel/LikesNumber.text = "[center]"+str(likes+1)+"[center]"
+		
+
+func _on_mouse_click(event: InputEvent) -> void:
+	if event.is_action_pressed("mouse_left_click"):
+		SoundsBank.play_sfx(SoundsBank.ui_deny)

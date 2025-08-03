@@ -43,7 +43,4 @@ theme_override_constants/separation = 304
 [node name="NewPostPanel" parent="ScrollContainer/TweetsContainer" instance=ExtResource("1_x3hk2")]
 layout_mode = 2
 
-[node name="NewPostPanel" parent="ScrollContainer/TweetsContainer/NewPostPanel" index="0"]
-layout_mode = 0
-
 [editable path="ScrollContainer/TweetsContainer/NewPostPanel"]

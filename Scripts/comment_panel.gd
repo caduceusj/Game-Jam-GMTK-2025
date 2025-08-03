@@ -52,3 +52,8 @@ func modify_text():
 	else:
 		final_text = full_text
 	$CommentLabel.text = final_text
+
+
+func _on_mouse_click(event: InputEvent) -> void:
+	if event.is_action_pressed("mouse_left_click"):
+		SoundsBank.play_sfx(SoundsBank.ui_deny)

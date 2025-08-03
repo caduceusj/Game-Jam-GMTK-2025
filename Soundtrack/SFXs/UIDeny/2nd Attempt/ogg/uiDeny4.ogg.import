@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://1d5008mqioj2"
+path="res://.godot/imported/uiDeny4.ogg-ddc89a3cddf51b92e6becf8054dcd44b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Soundtrack/SFXs/UIDeny/2nd Attempt/ogg/uiDeny4.ogg"
+dest_files=["res://.godot/imported/uiDeny4.ogg-ddc89a3cddf51b92e6becf8054dcd44b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
