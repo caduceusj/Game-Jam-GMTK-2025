@@ -1,0 +1,74 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dxtb5snweefu0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pao0q"]
+bg_color = Color(0.0705882, 0.0705882, 0.0784314, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0576825, 0.0475035, 0.290661, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2a54a"]
+bg_color = Color(0.0705882, 0.0705882, 0.0784314, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0765314, 0.0646559, 0.348472, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_121kx"]
+bg_color = Color(0.0705882, 0.0705882, 0.0784314, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.121569, 0.105882, 0.486275, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uda43"]
+bg_color = Color(0.0705882, 0.0705882, 0.0784314, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.121569, 0.105882, 0.486275, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3ra7"]
+bg_color = Color(0.0705882, 0.0705882, 0.0784314, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.121569, 0.105882, 0.486275, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pao0q"]
+
+[resource]
+default_font_size = 21
+Button/fonts/font = null
+Button/styles/focus = SubResource("StyleBoxFlat_pao0q")
+Button/styles/hover = SubResource("StyleBoxFlat_2a54a")
+Button/styles/normal = SubResource("StyleBoxFlat_121kx")
+Button/styles/pressed = SubResource("StyleBoxFlat_uda43")
+Panel/styles/panel = SubResource("StyleBoxFlat_d3ra7")
+RichTextLabel/colors/default_color = Color(0.882353, 0.87451, 0.92549, 1)
+ScrollContainer/styles/panel = SubResource("StyleBoxTexture_pao0q")

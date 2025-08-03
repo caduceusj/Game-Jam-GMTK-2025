@@ -7,7 +7,6 @@ var tweet : String = "STRING VAZIA CUIDADO"
 
 const PROFILE_GENERATOR = preload("res://Cenas/profile_generator.tscn")
 @onready var tweet_panel: Panel = $TweetPanel
-@onready var close_component: CloseComponent = $CloseComponent
 
 #DEPENDENDO DO NIVEL DO JOGADOR ALGUNS EMOJIS VÃO APARECENDO EM SEUS POSTS: 🎭⚔️🗡🥇☄️💫🌟
 

@@ -1,10 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://vkxdumdlmh62"]
 
 [ext_resource type="Script" uid="uid://d4khkewt7247" path="res://Scripts/tweetFeedback.gd" id="1_big7m"]
-[ext_resource type="Texture2D" uid="uid://bo60fi4h0my37" path="res://Sprites/Placeholder/heart.png" id="1_x4npw"]
-[ext_resource type="Texture2D" uid="uid://bwevy5cvw6ko3" path="res://Sprites/Placeholder/heart (1).png" id="2_k080y"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nukqp"]
+[ext_resource type="Theme" uid="uid://dxtb5snweefu0" path="res://resources/new_theme.tres" id="2_x4npw"]
+[ext_resource type="Texture2D" uid="uid://cv65ktsonseed" path="res://Sprites/profile-mask.png" id="4_k080y"]
+[ext_resource type="Texture2D" uid="uid://bkj1efulsluj8" path="res://Sprites/image.png" id="5_ecxwn"]
 
 [node name="FeedbackTweet" type="Control"]
 layout_mode = 3
@@ -22,7 +21,7 @@ clip_contents = true
 layout_mode = 0
 offset_right = 1040.0
 offset_bottom = 302.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_nukqp")
+theme = ExtResource("2_x4npw")
 
 [node name="Text" type="RichTextLabel" parent="TweetPanel"]
 layout_mode = 0
@@ -30,19 +29,9 @@ offset_left = 64.0
 offset_top = 136.0
 offset_right = 881.0
 offset_bottom = 278.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 21
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi."
 fit_content = true
 scroll_active = false
-
-[node name="ColorRect" type="ColorRect" parent="TweetPanel"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 32.0
-offset_right = 160.0
-offset_bottom = 128.0
-color = Color(1.15514e-06, 0.58828, 0.58919, 1)
 
 [node name="Name&Hashtag" type="RichTextLabel" parent="TweetPanel"]
 layout_mode = 0
@@ -50,23 +39,18 @@ offset_left = 184.0
 offset_top = 40.0
 offset_right = 832.0
 offset_bottom = 104.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
 text = "Grorc🌟
 @grorc"
 scroll_active = false
 
-[node name="LikeButton" type="TextureButton" parent="TweetPanel"]
-layout_mode = 0
-offset_left = 937.0
-offset_top = 73.0
-offset_right = 1006.0
-offset_bottom = 137.0
-toggle_mode = true
-texture_normal = ExtResource("1_x4npw")
-texture_pressed = ExtResource("2_k080y")
-ignore_texture_size = true
-stretch_mode = 0
+[node name="Profile-mask" type="Sprite2D" parent="TweetPanel"]
+modulate = Color(0.611765, 0.329412, 0.752941, 1)
+position = Vector2(112, 80)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_k080y")
 
-[connection signal="toggled" from="TweetPanel/LikeButton" to="." method="_on_like_button_toggled"]
+[node name="Image" type="Sprite2D" parent="TweetPanel"]
+position = Vector2(115, 82)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_ecxwn")

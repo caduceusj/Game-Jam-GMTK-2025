@@ -2,11 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bo60fi4h0my37" path="res://Sprites/Placeholder/heart.png" id="1_nukqp"]
 [ext_resource type="Script" uid="uid://crohs4f15tm8k" path="res://Scripts/tweet.gd" id="1_ygwjh"]
+[ext_resource type="Theme" uid="uid://dxtb5snweefu0" path="res://resources/new_theme.tres" id="2_bf8mk"]
 [ext_resource type="Texture2D" uid="uid://bneaeh1m3ndtn" path="res://Sprites/Placeholder/chat.png" id="2_m5uay"]
 [ext_resource type="Texture2D" uid="uid://bwevy5cvw6ko3" path="res://Sprites/Placeholder/heart (1).png" id="3_arkaf"]
 [ext_resource type="PackedScene" uid="uid://dbx7v66p35sw3" path="res://Cenas/comment_panel.tscn" id="5_xu2ss"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nukqp"]
 
 [node name="Tweet0" type="Control"]
 layout_mode = 3
@@ -24,7 +23,7 @@ clip_contents = true
 layout_mode = 0
 offset_right = 1040.0
 offset_bottom = 302.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_nukqp")
+theme = ExtResource("2_bf8mk")
 
 [node name="Text" type="RichTextLabel" parent="TweetPanel"]
 layout_mode = 0
@@ -32,8 +31,6 @@ offset_left = 64.0
 offset_top = 136.0
 offset_right = 881.0
 offset_bottom = 200.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 21
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi."
 fit_content = true
 scroll_active = false
@@ -44,8 +41,6 @@ offset_left = 184.0
 offset_top = 40.0
 offset_right = 832.0
 offset_bottom = 104.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
 text = "nameblablabla 
 @blabla"
@@ -69,8 +64,6 @@ offset_left = 937.0
 offset_top = 138.0
 offset_right = 1006.0
 offset_bottom = 178.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
 text = "[center]69420[center]"
 
