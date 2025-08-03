@@ -1,8 +1,13 @@
 extends Control
+class_name Tweet
 
 var likes : int = 0
 var user : String
 var tweet : String = "STRING VAZIA CUIDADO"
+
+const PROFILE_GENERATOR = preload("res://Cenas/profile_generator.tscn")
+@onready var tweet_panel: Panel = $TweetPanel
+@onready var close_component: CloseComponent = $CloseComponent
 
 #DEPENDENDO DO NIVEL DO JOGADOR ALGUNS EMOJIS VÃO APARECENDO EM SEUS POSTS: 🎭⚔️🗡🥇☄️💫🌟
 
@@ -16,7 +21,10 @@ func _ready() -> void:
 	else:
 		$"TweetPanel/Name&Hashtag".text = get_name_with_flavor_emoji(Global.to_spaced_name(user), likes) + "\n" + Global.to_twitter_handle(user)
 
-	
+	var random_profile_picture: CharacterProfileGenerator = PROFILE_GENERATOR.instantiate()
+	random_profile_picture.scale = Vector2.ONE * 0.75
+	random_profile_picture.position = Vector2(64,32)
+	tweet_panel.add_child(random_profile_picture)
 	
 	$TweetPanel/LikesNumber.text = "[center]"+str(likes)+"[center]"
 	
@@ -55,7 +63,7 @@ func get_name_with_flavor_emoji(base_name: String, total_followers: int) -> Stri
 func close():
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_EXPO)
-	tween.tween_property($TweetPanel, "scale", Vector2(0,0), 1.0)
+	tween.tween_property(tweet_panel, "scale", Vector2(0,0), 1.0)
 	await(tween.finished)
 	queue_free()
 

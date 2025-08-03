@@ -21,7 +21,6 @@ var weekFollowers : int = 0
 @onready var tweet = preload("res://Cenas/tweetSkeleton.tscn")
 @onready var feedback = preload("res://Cenas/last5Tweets.tscn")
 
-
 func _ready() -> void:
 	changeRound()
 
@@ -141,10 +140,10 @@ func shuffle_children(node : Control) -> void:
 #FUNÇÃO QUE INSTANCIA OS TWEETS
 func add_tweet(tweet_text : String, trend : String , opinion : String, premadeUser : bool = false):
 	var likesAux : int = generateLikes(opinion, trend)
-	var user_string
+	var user_string : String
 	if(premadeUser == false):
 		user_string = randomize_user()
-	var tweetInstance = tweet.instantiate()
+	var tweetInstance: Tweet = tweet.instantiate()
 	
 	tweetInstance.likes = likesAux
 	tweetInstance.user = user_string
@@ -167,7 +166,7 @@ func generateLikes(opinion : String, trend : String) -> int:
 #FUNÇÃO QUE CALCULA OS LIKES
 
 #FUNÇÃO QUE ALEATORIZA O USUÁRIO
-func randomize_user():
+func randomize_user() -> String:
 	var adjectives: Array = infoDictionary.WORD_LIST.adjectives
 	var nouns: Array = infoDictionary.WORD_LIST.nouns
 	var verbs: Array = infoDictionary.WORD_LIST.verbs_ing

@@ -38,14 +38,6 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odi
 fit_content = true
 scroll_active = false
 
-[node name="ColorRect" type="ColorRect" parent="TweetPanel"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 32.0
-offset_right = 160.0
-offset_bottom = 128.0
-color = Color(1.15514e-06, 0.58828, 0.58919, 1)
-
 [node name="Name&Hashtag" type="RichTextLabel" parent="TweetPanel"]
 layout_mode = 0
 offset_left = 184.0
@@ -100,7 +92,6 @@ offset_bottom = 267.0
 
 [connection signal="gui_input" from="TweetPanel" to="." method="_on_mouse_click"]
 [connection signal="gui_input" from="TweetPanel/Text" to="." method="_on_mouse_click"]
-[connection signal="gui_input" from="TweetPanel/ColorRect" to="." method="_on_mouse_click"]
 [connection signal="gui_input" from="TweetPanel/Name&Hashtag" to="." method="_on_mouse_click"]
 [connection signal="toggled" from="TweetPanel/LikeButton" to="." method="_on_like_button_toggled"]
 [connection signal="gui_input" from="TweetPanel/CommentPanel" to="." method="_on_mouse_click"]

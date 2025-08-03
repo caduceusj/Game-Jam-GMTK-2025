@@ -1,7 +1,8 @@
 extends Control
+@onready var tweet_panel: Panel = $TweetPanel
+
 func _ready():
 	get_node("TweetPanel/Text").text = get_follower_feedback_message()
-	
 
 # Function that gets follower data from Global variables and returns a feedback message.
 func get_follower_feedback_message() -> String:
@@ -80,3 +81,10 @@ func get_follower_feedback_message() -> String:
 	var final_message = feedback_message + "\n(Current followers: " + str(Global.numberOfFollowers) + ")"
 	Global.weekFollowers = 0
 	return final_message
+
+func close():
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_EXPO)
+	tween.tween_property(tweet_panel, "scale", Vector2(0,0), 1.0)
+	await(tween.finished)
+	queue_free()

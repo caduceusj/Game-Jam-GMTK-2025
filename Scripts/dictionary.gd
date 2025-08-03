@@ -38,12 +38,26 @@ var trends_dict = {
 	"hanging": {
 		"positive": [
 			"These slepts can't let we have a single good thing #keepthehangings",
-			"Sei nem onde eu tô, mas concordo"
+			"I don't even know where I am, but I agree",
+			"The hanging is amazing!! I love hanging! #hangthem",
+			"Waiting anxiously for the hanging at the hanging plaza",
+			"The hanging at Mother Luiza's was mind blowing omg!",
+			"YEESS, PLEASE KEEP HANGING THOSE GUYS",
+			"People need to understand that hanging is good for our society",
+			"I would love to throw someone to the gallows today!",
+			"Is anyone selling wood? I need some to build a new gallow",
+			"I'm taking my wife to the hanging today, I love hanging with her.",
+			"I love hanging out!",
 		],
 		"negative": [
 			"All lives matter!!! #abolishhanging",
 			"Do you realize how bad hangings are? Like, actually? Our society would be much better without them",
-			"Do I need to say anything? No one should be killed for any crime, not even for stealing loot from your party in a plentiful dungeon"
+			"Do I need to say anything? No one should be killed for any crime, not even for stealing loot from your party in a plentiful dungeon",
+			"The hanging is awful! I hate hanging #donthangthem",
+			"Unfortunately they hang in the hanging plaza :(",
+			"They are being forced to die, please stop!",
+			"Shit, that was so scary, someone has to do something about it",
+			"hanging is a war crime! #donthangmakelove",
 		]
 
 	},
@@ -100,7 +114,71 @@ var trends_dict = {
 			"Who in this world is foolish enough to waste their time staring at a damn crystal ball?",
 			"You get wiser by pondering and orb? And the earth is round LOL #fakenews"
 		]
-	}
+	},
+	"Hunger": {
+		"positive":[
+			"Hunger is good for you, it gives you more reason to get rich!",
+			"I don't care about these people, let them get by trying to get food.",
+			"What is this thing they call hunger? Here at the palace is everything okay",
+		],
+		"negative":[
+			"The king should do something about the hunger",
+			"I feel so sorry for them, I wish I could do something to help them. #StopTheHunger",
+			"We should assault the palace and steal their food.",
+		]
+	},
+	"Lafufu":{
+		"positive":[
+			"Gotta get myself some of these Lafufu plushies. Hoping for the golden one 🤞✨",
+			"These Lafufu plushies are just ADORABLE 😍😍😍 Their grin is just a little strange tho",
+			"Opened 3 Lafufu sacs today and pulled 2 SHINIES 😱 #BestDayOf1207",
+			"Lowkey thinking of trading my husband for 10 Lafufu sacs rn 🤑",
+			"Papai compra lafufu pra mim🥺",
+		],
+		"negative":[
+			"Im gonna put my new lafufu in a glass jar and nobody gonna stop me",
+			"In terms of human x lafufu relations, they’re the best at sucking #DontBuy",
+			"These lafufu look just like my niece. That’s not a compliment.",
+			"When I know these lafufu plushies are just a gold laundering scam but I can’t prove it",
+			"If I were in a room with the demon king, a lafufu and 2 instant death spells, I’d kill the king and tear the Lafufu apart bare‑handed",
+		]
+	},
+	"Loan shark":{
+		"positive":[
+			"I need money urgent, does anyone has a sugestion?",
+			"Just made a loan with that William, the Loaner. Good money!",
+			"These loans are important, because not everyone has the ways to get money. You guys don't know what you are talking about.",
+			"I love loan sharks! My son became one at the age of 6 and now everyone treats me well.",
+			"My loan shark is my guiding star.",
+			"Don't believe the fairy guy, he's a fado singer.",
+			"I built a house with my loan sharks.",
+			"I became a loan shark and never went hungry again.",
+		],
+		"negative":[
+			"Shit shit, there is a tall guy stalking me. I told him I would return the money in time, but he doesn't believe me.",
+			"Someone needs to stop these loans from circulating, people are getting killed because of this.",
+			"I think our king is a loan shark!",
+			"Because of my loan shark, I'm now eating dirt.",
+			"For every two loan sharks six fairies die.",
+		]
+	},
+	"Moldy bread":{
+		"positive":[
+			"People are lying, MY breads are perfectly fine!",
+			"I ate that baker's bread yesterday and I'm totally fine!",
+			"I can't accept that baker is selling outdated stuff, it's usually so good!",
+			"Those guys don't like the baker and are trying to defame him.",
+			"I LOVE THE PLACE OMG, STOP SPREADING MISSINFORMATION.",
+			"You need to understand that a simple bread wouldn't harm anyone, you must have ate other bad stuff",
+		],
+		"negative":[
+			"That baker in the plaza is selling musty bread",
+			"I'm stuck at the work's garderobe since morning. That damn bread, never buying from him again.",
+			"Shit, I am going to call the health surveillance on that freak!",
+			"Be careful everyone, that bakery is cursed!",
+			"He sucks! #arrestthebaker",
+		]
+	},
 }
 #DICIONARIO DE TRENDS E COMENTARIOS
 
