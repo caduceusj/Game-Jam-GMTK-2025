@@ -1,0 +1,162 @@
+[gd_scene load_steps=20 format=3 uid="uid://c3bvckau7g3yc"]
+
+[ext_resource type="Script" uid="uid://dd1mhel30o7qj" path="res://Scripts/profile_generator.gd" id="1_2iv7i"]
+[ext_resource type="Shader" uid="uid://su2qbeqfga8" path="res://shader/profile_generator.gdshader" id="1_vw3g4"]
+[ext_resource type="Texture2D" uid="uid://doof1sc2eyq85" path="res://Sprites/fantasy-profile-features.png" id="2_vw3g4"]
+[ext_resource type="Texture2D" uid="uid://cv65ktsonseed" path="res://Sprites/profile-mask.png" id="3_fjww2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjww2"]
+shader = ExtResource("1_vw3g4")
+shader_parameter/base_tones = PackedColorArray(1, 0.760784, 0.631373, 1, 0.741176, 0.415686, 0.384314, 1, 0.560784, 0.301961, 0.341176, 1, 0.901961, 0.270588, 0.223529, 1, 0.678431, 0.184314, 0.270588, 1, 0.470588, 0.113725, 0.309804, 1, 0.388235, 0.670588, 0.247059, 1, 0.231373, 0.490196, 0.309804, 1)
+shader_parameter/output_tones = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_vw3g4"]
+colors = PackedColorArray(0.276491, 0.116926, 0.0446977, 1, 0.9, 0.7965, 0.693, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fjww2"]
+gradient = SubResource("Gradient_vw3g4")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_fjww2"]
+offsets = PackedFloat32Array(0, 0.171429, 0.542857)
+colors = PackedColorArray(0.4, 0.036, 0.036, 1, 0.73, 0.657, 0, 1, 0.08, 0.024, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_isw1e"]
+gradient = SubResource("Gradient_fjww2")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_isw1e"]
+offsets = PackedFloat32Array(0, 0.310714, 0.642857, 1)
+colors = PackedColorArray(0.812765, 0.774756, 0.999999, 1, 0.391943, 0.423191, 0.942669, 1, 0.532317, 0.971243, 0.980806, 1, 0.82434, 1, 0.753393, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e50rs"]
+gradient = SubResource("Gradient_isw1e")
+
+[sub_resource type="Gradient" id="Gradient_f33po"]
+offsets = PackedFloat32Array(0, 0.110714, 0.275, 0.5, 0.732143, 0.942857, 0.996429)
+colors = PackedColorArray(0.0354658, 0.582585, 0.631067, 1, 0, 0.510913, 0.879265, 1, 0.623756, 0.00194063, 0.824213, 1, 0.98, 0, 0.588, 1, 0.88, 0.836, 0, 1, 0.88, 0.836, 0, 1, 0.75, 0.15, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w6oco"]
+gradient = SubResource("Gradient_f33po")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iv7i"]
+atlas = ExtResource("2_vw3g4")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw3g4"]
+atlas = ExtResource("2_vw3g4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjww2"]
+atlas = ExtResource("2_vw3g4")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isw1e"]
+atlas = ExtResource("2_vw3g4")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e50rs"]
+atlas = ExtResource("2_vw3g4")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f33po"]
+atlas = ExtResource("2_vw3g4")
+region = Rect2(0, 384, 128, 128)
+
+[node name="ProfileGenerator" type="Control"]
+material = SubResource("ShaderMaterial_fjww2")
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+script = ExtResource("1_2iv7i")
+shade_color = Color(0.213805, 1.83498e-07, 0.113526, 1)
+skin_tone_map = SubResource("GradientTexture2D_fjww2")
+hair_tone_map = SubResource("GradientTexture2D_isw1e")
+elven_skin_tone_map = SubResource("GradientTexture2D_e50rs")
+elven_hair_tone_map = SubResource("GradientTexture2D_w6oco")
+
+[node name="Mask" type="TextureRect" parent="."]
+clip_children = 2
+use_parent_material = true
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("3_fjww2")
+
+[node name="Background" type="ColorRect" parent="Mask"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackHair" type="TextureRect" parent="Mask"]
+unique_name_in_owner = true
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_2iv7i")
+
+[node name="Body" type="TextureRect" parent="Mask"]
+unique_name_in_owner = true
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_vw3g4")
+
+[node name="Mouth" type="TextureRect" parent="Mask"]
+unique_name_in_owner = true
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_fjww2")
+
+[node name="Eyes" type="TextureRect" parent="Mask"]
+unique_name_in_owner = true
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_isw1e")
+
+[node name="FrontHair" type="TextureRect" parent="Mask"]
+unique_name_in_owner = true
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_e50rs")
+
+[node name="Nose" type="TextureRect" parent="Mask"]
+unique_name_in_owner = true
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_f33po")
